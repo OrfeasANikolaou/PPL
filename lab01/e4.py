@@ -26,12 +26,12 @@ txt = txt.upper()
 # print(txt)
 
 # count iterations
-for letter in txt:
-    if letter >= 'A' and letter <= 'Z':
-        cnt[ord(letter) - ord('A')] += 1
+for character in txt:
+    if character >= 'A' and character <= 'Z':
+        cnt[ord(character) - ord('A')] += 1
 
-# output [letter] count: cnt
+# output [character] count: cnt
 list_sz = range(len(cnt))
 for i in list_sz:
-    english_letters = chr(ord('A') + i)
-    print(f'[{english_letters}] count: {cnt[i]:02d}')
+    english_alphabet = chr(ord('A') + i)
+    print(f'[{english_alphabet}] count: {cnt[i]:02d}')
