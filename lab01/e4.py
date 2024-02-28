@@ -20,12 +20,18 @@ Although never is often better than *right* now.
 If the implementation is hard to explain, it's a bad idea.
 If the implementation is easy to explain, it may be a good idea.
 Namespaces are one honking great idea -- let's do more of those!"""
-
-lst1 = [0] * 26
+# setup
+cnt = [0] * 26
 txt = txt.upper()
-print(txt)
+# print(txt)
 
+# count iterations
 for letter in txt:
     if letter >= 'A' and letter <= 'Z':
-        lst1[ord(letter) - ord('A')] += 1
-print(lst1)
+        cnt[ord(letter) - ord('A')] += 1
+
+# output [letter] count: cnt
+list_sz = range(len(cnt))
+for i in list_sz:
+    english_letters = chr(ord('A') + i)
+    print(f'[{english_letters}] count: {cnt[i]:02d}')
