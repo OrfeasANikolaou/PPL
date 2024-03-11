@@ -20,5 +20,3 @@ def test_answer():
     assert hamming_distance("AGCT", "AGCT") == 0
     assert hamming_distance("AGCT", "TCGA") == 4
     assert hamming_distance("GAGCCTACTAACGGGAT", "CATCGTAATGACGGCCT") == 7
-
-test_answer()
