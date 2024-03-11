@@ -8,8 +8,7 @@ def e_approx(n):
         while x <= 1:
             times += 1
             x = x + random.random()
-    return round(times/n, 7)
-#    return times/n 
+    return times/n 
 
 # Mην αλλάξετε κάτι από εδώ και κάτω
 class Test(unittest.TestCase):
