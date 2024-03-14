@@ -4,12 +4,12 @@ import re
 import unittest
 
 # text with commas and dots
-text1 = """One morning, when Gregor Samsa woke from troubled dreams, he found
-himself transformed in his bed into a horrible vermin. He lay on his
+text1 = """one morning, when gregor samsa woke from troubled dreams, he found
+himself transformed in his bed into a horrible vermin. he lay on his
 armour-like back, and if he lifted his head a little he could see his
 brown belly, slightly domed and divided by arches into stiff sections.
-The bedding was hardly able to cover it and seemed ready to slide off
-any moment. His many legs, pitifully thin compared with the size of the
+the bedding was hardly able to cover it and seemed ready to slide off
+any moment. his many legs, pitifully thin compared with the size of the
 rest of him, waved about helplessly as he looked."""
 
 # text without commas or dots
@@ -25,41 +25,71 @@ rest of him waved about helplessly as he looked"""
 def q1():
     words1 = text1.split()
     words2 = text2.split()
-    return len(set(words2))
+    words2 = set(words2)
+    return len(words2)
 
 # Πλήθος των λέξεων που ξεκινούν με τον χαρακτήρα 'h' και τελειώνουν με τον χαρακτήρα 'e'
 def q2():
-    ...
-
+    words = text2.split()
+    words = set(words)
+    cnt = 0
+    for word in words:
+        if re.search(r"\b^h\w*e$\b", word) != None:
+            cnt += 1
+    return cnt
 
 # Πλήθος των λέξεων του κειμένου με 5 χαρακτήρες
 def q3():
     words = text2.split()
+    words = set(words)
     cnt = 0
     for word in words:
-        if len(word) == 5:
+        if re.search(r"\b\w{5}\b", word) != None:
             cnt += 1
     return cnt
 
 
 # Πλήθος λέξεων του κειμένου που περιέχουν συνεχόμενους τους χαρακτήρες 'a', 's'
 def q4():
-    ...
+    words = text2.split()
+    words = set(words)
+    cnt = 0
+    for word in words:
+        if re.search(r"\b\w*as\w*\b", word) != None:
+            cnt += 1
+    return cnt
 
 
 # πλήθος λέξεων του κειμένου που περιέχουν συνεχόμενους τους χαρακτήρες 'a', 's' σε οποιαδήποτε σειρά
 def q5():
-    ...
+    words = text2.split()
+    cnt = 0
+    for word in words:
+        if re.search(r"\b\w*as\w*|\w*sa\w*\b", word) != None:
+            cnt += 1
+    return cnt
 
 
 # πλήθος λέξεων του κειμένου που ξεκινούν και τελειώνουν με τον ίδιο χαρακτήρα
 def q6():
-    ...
+    words = text2.split()
+    words = set(words)
+    cnt = 0
+    for word in words:
+        if re.search(r"\b(\w)\w*\1\b", word) != None:
+            cnt += 1
+    return cnt
 
 
 # πλήθος λέξεων του κειμένου που ξεκινούν και τελειώνουν με τους 2 ίδιους χαρακτήρες
 def q7():
-    ...
+    words = text2.split()
+    words = set(words)
+    cnt = 0
+    for word in words:
+        if re.search(r"\b(\w\w)\w*\1\b", word) != None:
+            cnt += 1
+    return cnt 
 
 
 # Mην αλλάξετε κάτι από εδώ και κάτω
