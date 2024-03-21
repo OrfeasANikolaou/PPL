@@ -1,37 +1,4 @@
 import unittest
-
-
-def f1(lst):
-    ret = []
-    for obj in lst:
-        ret.append(len(str(obj)))
-    return ret
-
-
-def f2(lst):
-    ret = []
-    for obj in lst:
-        ret.append(int(str(obj)[::-1]))
-    return ret
-
-
-def f3(lst):
-    ret = []
-    s = sum(lst)
-    avg = s / len(lst)
-    for obj in lst:
-        if obj > avg:
-            ret.append(obj)
-    return ret
-
-
-def f4(lst):
-    ret = []
-    for obj in lst:
-        ret.append((obj, obj % 2 == 0))
-    return ret
-
-
 class TestComprehensions(unittest.TestCase):
     def test1(self):
         a_list = [56, 37, 771, 90, 16, 11]
